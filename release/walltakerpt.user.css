@@ -4,6 +4,7 @@
 @version        1.0.1
 @description	Various popular text editor themes for Walltaker
 @author         mandorinn
+@updateURL	https://github.com/mandorinn/walltaker-pt/raw/main/release/walltakerpt.user.css
 @preprocessor stylus
 
 @var select theme "Theme" {
