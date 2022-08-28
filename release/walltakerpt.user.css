@@ -1,0 +1,204 @@
+/* ==UserStyle==
+@name           Walltaker Programmer Themes
+@namespace      WalltakerPT
+@version        1.0.1
+@description	Various popular text editor themes for Walltaker
+@author         mandorinn
+@preprocessor stylus
+
+@var select theme "Theme" {
+	"Gruvbox": "gb",
+	"Solarized": "solar",
+	"Dracula": "dracula",
+	"Nord": "nord"
+}
+@var color accent "Accent"  #fb346c
+@var select   accntSel   "Site accent"   {
+  "Default": " default",
+  "Custom*": "accent",
+}
+==/UserStyle== */
+
+@-moz-document domain("walltaker.joi.how") {
+
+	$transAcc	= alpha(accent, .2)
+	:root {
+		--transparentAcc: $transacc;	
+	}
+	@media (prefers-color-scheme: light) {
+		body > header:last-of-type {
+			background: $transAcc;
+		}
+		*[class^="accent-"], .tab {
+			background: $transAcc
+			*[class^="accent-"]  {
+				background: transparent;	
+			}
+		}
+		.tabs__labels button[data-open="true"] {
+			background: $transAcc;
+		}
+		.tabs__labels button[data-open="false"] {
+			background: var(--bg);
+		}
+	}
+	
+	if accntSel == default	{
+	:root {
+		--accent: hsl(42, 100%, 50%);
+	}
+}
+if accntSel == accent{
+	:root {
+		--accent: accent;
+	}
+}
+
+if theme == gb {
+@media (prefers-color-scheme: light) {
+	:root {
+		color-scheme: light; --bg: #fbf1c7; --accent-bg: #faf5e1; --text: #282828; --text-light: #282828; --border: #2828287a; --code: #d3869b; --preformatted: #a89984; --disabled: #1d2021; --danger: #981e19; --success: #8ec07c; --regal-purple: #b162ad; --jade: #50e176; --ruby: #cc241d; --uranium: #9fdf1f; --platinum: #c7c2bd; --gold: #d79921; --silver: #938e88; --bronze: #604a39; --tin: #928374; --driftwood: #334d18;
+	}}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+	color-scheme: dark; --bg: #282828; --accent-bg: #3c3836; --text: #ebdbb2; --text-light: #fbf1c7; --border: #ebdbb27a; --code: #d3869b; --preformatted: #a89984; --disabled: #1d2021; --danger: #981e19; --success: #8ec07c; --regal-purple: #b162ad; --jade: #50e176; --ruby: #cc241d; --uranium: #9fdf1f; --platinum: #c7c2bd; --gold: #d79921; --silver: #938e88; --bronze: #604a39; --tin: #928374; --driftwood: #334d18;
+	}}}
+	if theme == solar {
+@media (prefers-color-scheme: light) {
+	:root {
+		color-scheme: light; --bg: #fdf6e3 ; --accent-bg: #eee8d5; --text: #002b36 ; --text-light: #073642 ; --border: #0736427a; --code: #d3869b; --preformatted: #a89984; --disabled: #839496; --danger: #dc322f ; --success: #859900; --regal-purple: #d336ce ; --jade: #2aa198; --ruby: #dc2f63; --uranium: #6e9900; --platinum: #c7c2bd; --gold: #d79732; --silver: #939190; --bronze: #553b26; --tin: #a2978d; --driftwood: #3f5925;
+	}}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+	color-scheme: dark; --bg: #002b36; --accent-bg: #073642; --text: #839496; --text-light: #93a1a1; --border: #8394967a; --code: #d3869b; --preformatted: #a89984; --disabled: #1d2021; --danger: #dc322f ; --success: #859900; --regal-purple: #d336ce ; --jade: #2aa198; --ruby: #dc2f63; --uranium: #6e9900; --platinum: #c7c2bd; --gold: #d79732; --silver: #939190; --bronze: #553b26; --tin: #a2978d; --driftwood: #3f5925;
+	}}}
+	if theme == dracula {
+@media (prefers-color-scheme: light) {
+	:root {
+		color-scheme: light; --bg: #f6f2f8; --accent-bg: #e1d3e8; --text: #282a36; --text-light: #44475a; --border: #282a367a; --code: #d3869b; --preformatted: #a89984; --disabled: #bbc3f6; --danger: #ff5555; --success: #50fa7b; --regal-purple: #bd93f9 ; --jade: #50faad; --ruby: #ff5563; --uranium: #bdfb62; --platinum: #d3d3cc; --gold: #c8ae51; --silver: #a4a49e; --bronze: #604528; --tin: #646461; --driftwood: #625929;
+	}}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+	color-scheme: dark; --bg: #282a36; --accent-bg: #44475a; --text: #f8f8f2; --text-light: #fff; --border: #f8f8f27a; --code: #d3869b; --preformatted: #a89984; --disabled: #44475a; --danger: #ff5555; --success: #50fa7b; --regal-purple: #bd93f9 ; --jade: #50faad; --ruby: #ff5563; --uranium: #bdfb62; --platinum: #d3d3cc; --gold: #c8ae51; --silver: #a4a49e; --bronze: #604528; --tin: #646461; --driftwood: #625929;
+	}}}
+		if theme == nord {
+@media (prefers-color-scheme: light) {
+	:root {
+		color-scheme: light; --bg: #eceff4; --accent-bg: #e5e9f0; --text: #2e3440; --text-light: #3b4252; --border: #2e34407a; --code: #d3869b; --preformatted: #a89984; --disabled: #3b4252; --danger: #974149; --success: #a3be8c; --regal-purple: #b48ead; --jade: #7bc094; --ruby: #bf616a; --uranium: #a8c961; --platinum: #d3d3cc; --gold: #b2955d; --silver: #babab9; --bronze: #835b3f; --tin: #646461; --driftwood: #83693f;
+	}}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+	color-scheme: dark; --bg: #2e3440; --accent-bg: #3b4252; --text: #e5e9f0; --text-light: #eceff4; --border: #e5e9f07a; --code: #d3869b; --preformatted: #a89984; --disabled: #3b4252; --danger: #974149; --success: #a3be8c; --regal-purple: #b48ead; --jade: #7bc094; --ruby: #bf616a; --uranium: #a8c961; --platinum: #d3d3cc; --gold: #b2955d; --silver: #babab9; --bronze: #835b3f; --tin: #646461; --driftwood: #83693f;
+	}}}
+	
+	
+	/* Badges */ 
+	.text-charm__medal-regal-purple {
+		background: var(--regal-purple);
+	}
+	.text-charm__medal-jade {
+		background: var(--jade);
+	}
+	.text-charm__medal-ruby {
+		background: var(--ruby);
+	}
+	.text-charm__medal-uranium {
+		background: var(--uranium);
+	}
+	.text-charm__medal-platinum {
+		background: var(--platinum);
+	}
+	.text-charm__medal-gold {
+		background: var(--gold);
+	}
+	.text-charm__medal-silver {
+		background: var(--silver);
+	}
+	.text-charm__medal-bronze {
+		background: var(--bronze);
+	}
+	.text-charm__medal-tin {
+		background: var(--tin);
+	}
+	.text-charm__medal-driftwood {
+		background: var(--driftwood);
+	}
+   .user-tools {
+	   a {
+		   display:flex;
+		   max-width:fit-content;
+	   }
+	   .pinged {
+		   align-items: center;
+		   justify-content: center;
+		   &::after {
+			   transform: translateY(0rem);
+		   }
+	   }
+   }
+/*  .link--backdrop {
+ 			height: 100%;
+  			width: 100%;
+  			position: absolute;
+			z-index: -10;
+			opacity: 0.3;
+			img {
+				height: 100%;
+				width:100%;
+				object-fit: cover;
+				filter: blur(2px) brightness(0.5) !important;
+			}
+					&::before {
+ 		  content: '';
+ 		  display: block;
+ 		  position: absolute;
+		  inset: 0;
+		  width: 100%;
+		  height: 100%;
+		  background: var(--accent);
+		  mix-blend-mode: color;
+		  filter: brightness(0.2);
+		  z-index: 10;
+}
+		}*/
+	    .link::after {
+ 			opacity: 0.09;
+			font-size: clamp(5rem, 20.5vw, 11rem);
+			bottom: -6vw;
+		}
+		.link[data-feed-number="355"], .link[data-feed-number="1487"] {
+			--accent: #ff0060 !important;
+		}
+			.link[data-feed-number="355"]::after {
+			content:"🖌️" !important;
+			filter: sepia(100);
+		}
+			.link[data-feed-number="1487"]::after { 
+				content:"🌐" !important;
+				filter: sepia(100);
+			}
+			.link[data-feed-number="1487"] {
+				.link--device-in-use {
+					display:flex;
+				}
+				.link--device-in-use::before{
+					content: "mandorinn's website";
+					
+					
+				}
+			}
+			.link--response::before, .notifications__popover::before,  {
+				top: 1px;
+			}
+
+}
+
+
+
+
+
+
